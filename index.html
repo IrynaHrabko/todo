@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet">   
+</head>
+<body>
+
+<h1 class="logo wrapper">
+    <span class="logo__text">
+        My awesome lists
+        <span class="material-symbols-outlined">
+            select_check_box
+        </span>
+    </span>
+</h1>
+
+<form class="wrapper form" name="createForm">
+    <label class="input">
+        Назва*
+        <input name="name" type="text">
+    </label>
+
+    <label class="input">
+        Тип*
+        <select name="type">
+            <option value="task">
+                Задача
+            </option>
+            <option value="purchase">
+                Покупка
+            </option>
+        </select>
+    </label>
+
+    <label class="input">
+        Дедлайн*
+        <input name="deadline" type="date">
+    </label>
+    <label class="input --wide">
+        Опис
+        <textarea name="desc" rows="1"></textarea>
+    </label>
+    <input type="hidden" name="id">
+    <button class="btn" name="button">
+        Додати +
+    </button>
+</form>
+
+<form class="wrapper filters">
+    <span class="material-symbols-outlined">
+        filter_alt
+    </span>
+    <label class="input">
+        <select name="type">
+            <option value="фдд">
+                Всі
+            </option>
+            <option value="task">
+                Задачі
+            </option>
+            <option value="purchase">
+                Покупки
+            </option>
+        </select>
+    </label>
+</form>
+
+<main class="wrapper list">
+</main>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

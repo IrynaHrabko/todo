@@ -1,0 +1,256 @@
+:root {
+  --background: #c2c2b9;
+  --accent: #ff8f3d;
+  --secondary: #1a7391;
+  --text-color: #241a04;
+  --gradient: linear-gradient(45deg, var(--accent), var(--secondary));
+}
+
+@keyframes floating-gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button, input, a {
+  transition: 0.5s;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.wrapper {
+  padding: 0 calc(50vw - 360px);
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 calc(50vw - 200px);
+  }
+}
+@media screen and (max-width: 405px) {
+  .wrapper {
+    padding: 0 calc(50vw - 170px);
+  }
+}
+
+.logo {
+  padding-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.logo__text {
+  background-clip: text;
+  background-image: var(--gradient);
+  color: transparent;
+  background-size: 125%;
+  animation: floating-gradient 2.5s infinite alternate;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.form {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 200px 200px;
+  position: relative;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+.form button {
+  margin-top: auto;
+}
+@media screen and (max-width: 768px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.input input, .input select, .input textarea {
+  background: none;
+  border: none;
+  padding: 5px 5px 10px;
+  resize: none;
+  outline: none;
+}
+.input.--wide {
+  grid-column: 1/3;
+}
+@media screen and (max-width: 768px) {
+  .input.--wide {
+    grid-column: unset;
+  }
+}
+.input:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: var(--gradient);
+  background-size: 150%;
+  background-position: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.input:focus-within:after, .input:hover:after {
+  background-position: 100%;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  color: var(--background);
+  font-weight: 700;
+  background: var(--gradient);
+  background-size: 150%;
+  background-position: 0;
+  cursor: pointer;
+}
+.btn:hover, .btn:active {
+  background-position: 100%;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px 50px;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.list-item__content {
+  background: 1px solid var(--gradient);
+  padding-bottom: 5px;
+  position: relative;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .list-item__content {
+    grid-row: 1/4;
+    height: 100%;
+  }
+}
+.list-item__content:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-image: var(--gradient);
+  background-size: 150%;
+  background-position: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.list-item__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.list-item__btn {
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.list-item__btn span {
+  transition: 0.5s;
+  scale: 0.8;
+}
+.list-item__btn:hover span {
+  scale: 1.1;
+}
+@media screen and (max-width: 768px) {
+  .list-item__btn {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+.list-item__edit {
+  background: orange;
+}
+.list-item__remove {
+  background: tomato;
+}
+.list-item__mark {
+  background: transparent;
+  border: 5px solid forestgreen;
+  color: forestgreen;
+}
+.list-item__mark span {
+  color: transparent;
+}
+.list-item__mark:hover {
+  opacity: 0.5;
+}
+@media screen and (max-width: 768px) {
+  .list-item__mark {
+    border-width: 2px;
+  }
+}
+.list-item.--done .list-item__title {
+  text-decoration: line-through;
+}
+.list-item.--done .list-item__mark span {
+  scale: 1.1;
+  color: inherit;
+}
+@media screen and (max-width: 768px) {
+  .list-item {
+    grid-template-columns: 1fr 25px;
+    align-items: start;
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,15 @@
+.btn {
+  border: none;
+  padding: 10px;
+  color: var(--background);
+  font-weight: 700;
+  background: var(--gradient);
+  background-size: 150%;
+  background-position: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-position: 100%;
+  }
+}

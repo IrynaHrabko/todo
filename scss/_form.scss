@@ -1,0 +1,16 @@
+.form {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 200px 200px;
+  position: relative;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+
+  button {
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
