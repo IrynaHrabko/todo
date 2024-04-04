@@ -1,6 +1,6 @@
 .list-item {
   display: grid;
-  grid-template-columns: 1fr 50px 50px 50px;
+  grid-template-columns: 1fr 50px 50px 50px 200px;
   gap: 10px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -70,6 +70,9 @@
 
   &__remove {
     background: tomato;
+  }
+  &__favorite {
+    background: #bd4e4a;
   }
 
   &__mark {
